@@ -2,9 +2,12 @@ import React from 'react';
 import './style.css';
 
 const Navbar = () => {
+  const takeToHome = () => {
+    window.location.href = '/';
+  };
   return (
     <header className="navbar">
-      <h1>EVENTIFY</h1>
+      <h1 onClick={takeToHome}>EVENTIFY</h1>
     </header>
   );
 };

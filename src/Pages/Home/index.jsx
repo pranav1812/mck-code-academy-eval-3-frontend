@@ -8,7 +8,6 @@ import { Card, Filter } from '../../Components';
 const Home = () => {
   const { events, filter, search } = useContext(GlobalContext);
   const [homeEvents, setHomeEvents] = useState([]);
-  // const navigate = useNavigate();
 
   const filterMap = {
     All: (events) => events,
@@ -23,7 +22,21 @@ const Home = () => {
     if (!events || !events.length) {
       console.log('No events found');
     }
-    setHomeEvents(filterMap[filter](events));
+    let filtered = filterMap[filter](events);
+
+    console.log('Filtered Data: ', typeof filtered, filtered);
+    if (filtered && filtered.length) {
+      const searched = filtered.filter((event) => {
+        return (
+          search.length === 0 ||
+          event.name.toLowerCase().includes(search.toLowerCase())
+        );
+      });
+      console.log('Searched Data: ', typeof searched, searched);
+      filtered = searched;
+    }
+
+    setHomeEvents(filtered);
   }, [events, filter, search]);
   return (
     <div className="home">

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import makeRequest from '../../utils/requests/index';
 import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_URL } from '../../constants/apiEndpoints';
 import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_METHOD } from '../../constants/apiMethods';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { GlobalContext } from '../../Contexts';
 
@@ -22,15 +22,10 @@ const defaultEvent = (index) => ({
   index,
 });
 
-const Card = ({ index }) => {
+const EventPage = () => {
+  let { index } = useParams();
   const { events, setEvents } = useContext(GlobalContext);
   const [event, setEvent] = useState(defaultEvent(index));
-
-  const navigate = useNavigate();
-
-  const navigateToEvent = (index) => {
-    navigate(`/event/${index}`);
-  };
 
   useEffect(() => {
     console.log('event', events[index]);
@@ -87,20 +82,16 @@ const Card = ({ index }) => {
     }
   };
   return (
-    <div className="card">
-      <img
-        src={event.imgUrl}
-        alt={event.id + event.imgUrl}
-        onClick={() => navigateToEvent(index)}
-      />
+    <div className="event-page">
+      <img src={event.imgUrl} alt={event.id + event.imgUrl} />
       <hr />
-      <div className="card-text" onClick={() => navigateToEvent(index)}>
+      <div className="event-page-text">
         <h2>{event.name}</h2>
-        <p className="card-para">{event.description}</p>
-        <p className="card-para">VENUE: {event.venue}</p>
+        <p className="event-page-para">{event.description}</p>
+        <p className="event-page-para">VENUE: {event.venue}</p>
       </div>
 
-      <div className="card-footer">
+      <div className="event-page-footer">
         <div>
           <button onClick={toggleRegisteration}>
             {event.isRegistered
@@ -120,8 +111,8 @@ const Card = ({ index }) => {
   );
 };
 
-Card.propTypes = {
+EventPage.propTypes = {
   index: PropTypes.number.isRequired,
 };
 
-export default Card;
+export default EventPage;
