@@ -4,7 +4,7 @@ import './style.css';
 const Navbar = () => {
   return (
     <header className="navbar">
-      <h1>React JSX TEMPLATE</h1>
+      <h1>EVENTIFY</h1>
     </header>
   );
 };

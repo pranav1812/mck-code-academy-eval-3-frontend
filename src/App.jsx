@@ -9,14 +9,14 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <GlobalContextProvider>
-        <Router>
+      <Router>
+        <GlobalContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="error/:errorCode?" element={<ErrorScreen />} />
           </Routes>
-        </Router>
-      </GlobalContextProvider>
+        </GlobalContextProvider>
+      </Router>
       <Footer />
     </div>
   );

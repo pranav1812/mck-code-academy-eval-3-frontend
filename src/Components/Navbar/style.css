@@ -4,4 +4,10 @@
   color: #fff;
   display: flex;
   flex-direction: column;
+  padding-left: 100px;
+  padding-top: 32px;
+}
+
+h1 {
+  text-align: left;
 }
