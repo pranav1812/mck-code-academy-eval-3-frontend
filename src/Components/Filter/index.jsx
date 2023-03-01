@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { GlobalContext } from '../../Contexts';
 
@@ -39,16 +40,18 @@ const Filter = () => {
         <option value="Bookmarked">Bookmarked</option>
         <option value="SeatsAvailable">Seats Available</option>
       </select>
-      <input
-        className="filter-search"
-        type="text"
-        value={currentSearch}
-        onChange={handleSearchChange}
-        placeholder="Search"
-      />
-      <button className="filter-search-btn" onClick={handleSearchSubmit}>
-        Search
-      </button>
+      <div className="search">
+        <input
+          className="filter-search"
+          type="text"
+          value={currentSearch}
+          onChange={handleSearchChange}
+          placeholder="Search"
+        />
+        <button className="filter-search-btn" onClick={handleSearchSubmit}>
+          Search
+        </button>
+      </div>
     </div>
   );
 };

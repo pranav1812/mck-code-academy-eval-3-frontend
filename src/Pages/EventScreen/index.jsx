@@ -5,7 +5,7 @@ import makeRequest from '../../utils/requests/index';
 import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_URL } from '../../constants/apiEndpoints';
 import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_METHOD } from '../../constants/apiMethods';
 import { useParams } from 'react-router-dom';
-
+import { getFormattedDate } from '../../utils/commons/date';
 import { GlobalContext } from '../../Contexts';
 
 const defaultEvent = (index) => ({
@@ -83,28 +83,45 @@ const EventPage = () => {
   };
   return (
     <div className="event-page">
-      <img src={event.imgUrl} alt={event.id + event.imgUrl} />
-      <hr />
-      <div className="event-page-text">
-        <h2>{event.name}</h2>
-        <p className="event-page-para">{event.description}</p>
-        <p className="event-page-para">VENUE: {event.venue}</p>
-      </div>
-
-      <div className="event-page-footer">
-        <div>
-          <button onClick={toggleRegisteration}>
-            {event.isRegistered
-              ? 'REGISTERED'
-              : event.areSeatsAvailable
-              ? 'REGISTER'
-              : 'NO SEATS AVAILABLE'}
-          </button>
+      <div className="event-page-inner">
+        <img src={event.imgUrl} alt={event.id + event.imgUrl} />
+        <hr />
+        <div className="event-page-text">
+          <h2>{event.name}</h2>
+          <p className="event-page-para-des">{event.description}</p>
+          <p className="event-page-para-ven">VENUE: {event.venue}</p>
+          <p className="event-page-para-ven">
+            DATE: {getFormattedDate(event.datetime, event.timezone)}
+          </p>
         </div>
-        <div>
-          <button onClick={toggleBookmark}>
-            {event.isBookmarked ? 'BOOKMARKED' : 'BOOKMARK'}
-          </button>
+
+        <div className="event-page-footer">
+          <div>
+            <p>
+              {event.isRegistered
+                ? 'REGISTERED'
+                : event.areSeatsAvailable
+                ? 'REGISTER'
+                : 'NO SEATS AVAILABLE'}
+            </p>
+          </div>
+          <div>
+            <button onClick={toggleBookmark}>
+              {event.isBookmarked ? 'BOOKMARKED' : 'BOOKMARK'}
+            </button>
+          </div>
+        </div>
+
+        <div className="event-page-footer-2">
+          <div>
+            <button onClick={toggleRegisteration}>
+              {event.isRegistered
+                ? 'REGISTERED'
+                : event.areSeatsAvailable
+                ? 'REGISTER'
+                : 'NO SEATS AVAILABLE'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

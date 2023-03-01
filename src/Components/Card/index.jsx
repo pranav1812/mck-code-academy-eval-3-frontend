@@ -7,6 +7,7 @@ import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_METHOD } from '../../constants/api
 import { useNavigate } from 'react-router-dom';
 
 import { GlobalContext } from '../../Contexts';
+import { getFormattedDate } from '../../utils/commons/date';
 
 const defaultEvent = (index) => ({
   id: 'Loading...',
@@ -96,8 +97,11 @@ const Card = ({ index }) => {
       <hr />
       <div className="card-text" onClick={() => navigateToEvent(index)}>
         <h2>{event.name}</h2>
-        <p className="card-para">{event.description}</p>
-        <p className="card-para">VENUE: {event.venue}</p>
+        <p className="card-para-des">{event.description}</p>
+        <p className="card-para-ven">VENUE: {event.venue}</p>
+        <p className="card-para-ven">
+          DATE: {getFormattedDate(event.datetime, event.timezone)}
+        </p>
       </div>
 
       <div className="card-footer">

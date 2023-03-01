@@ -1,11 +1,18 @@
 .event-page {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 80%;
-  background-color: #000;
+  height: 95vh;
   color: #fff;
   margin-bottom: 32px;
+  padding: 0 10vw;
+}
+
+.event-page-inner {
+  width: 70vw;
+  height: 90vh;
+  margin: 32px auto;
+  background-color: #000;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-page > img {
@@ -21,8 +28,20 @@
   padding: 16px;
 }
 
-.event-page-para {
-  margin-bottom: 12px;
+.event-page-para-des {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-page-para-ven {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .event-page-footer {
@@ -30,4 +49,5 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0 4vw;
 }
