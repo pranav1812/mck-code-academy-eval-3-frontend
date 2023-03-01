@@ -4,18 +4,19 @@ import './style.css';
 import { GlobalContext } from '../../Contexts';
 
 import { Card, Filter } from '../../Components';
+import filterMap from '../../utils/commons/filter';
 
 const Home = () => {
   const { events, filter, search } = useContext(GlobalContext);
   const [homeEvents, setHomeEvents] = useState([]);
 
-  const filterMap = {
-    All: (events) => events,
-    Bookmarked: (events) => events.filter((event) => event.isBookmarked),
-    Registered: (events) => events.filter((event) => event.isRegistered),
-    SeatsAvailable: (events) =>
-      events.filter((event) => event.areSeatsAvailable),
-  };
+  // const filterMap = {
+  //   All: (events) => events,
+  //   Bookmarked: (events) => events.filter((event) => event.isBookmarked),
+  //   Registered: (events) => events.filter((event) => event.isRegistered),
+  //   SeatsAvailable: (events) =>
+  //     events.filter((event) => event.areSeatsAvailable),
+  // };
 
   useEffect(() => {
     console.log('Home useEffect called');
