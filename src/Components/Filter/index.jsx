@@ -8,7 +8,7 @@ const Filter = () => {
   const { filter, setFilter, search, setSearch } = useContext(GlobalContext);
   const [currentFilter, setCurrentFilter] = useState(filter);
   const [currentSearch, setCurrentSearch] = useState('');
-
+  <FontAwesomeIcon icon="fa-solid fa-filter" />;
   const handleFilterChange = (e) => {
     setCurrentFilter(e.target.value);
     setFilter(e.target.value);
@@ -30,6 +30,7 @@ const Filter = () => {
 
   return (
     <div className="filter">
+      {/* <i className="fas fa-filter" /> */}
       <select
         className="filter-select"
         value={currentFilter}

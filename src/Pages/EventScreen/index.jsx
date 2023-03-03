@@ -7,6 +7,7 @@ import { PATCH_DATA_BY_ID as PATCH_DATA_BY_ID_METHOD } from '../../constants/api
 import { useParams } from 'react-router-dom';
 import { getFormattedDate } from '../../utils/commons/date';
 import { GlobalContext } from '../../Contexts';
+import { useNavigate } from 'react-router-dom';
 
 const defaultEvent = (index) => ({
   id: 'Loading...',
@@ -27,7 +28,12 @@ const EventPage = () => {
   const { events, setEvents } = useContext(GlobalContext);
   const [event, setEvent] = useState(defaultEvent(index));
 
+  const navigate = useNavigate();
   useEffect(() => {
+    if (!events || !events.length) {
+      console.log('No events found');
+      navigate('/');
+    }
     console.log('event', events[index]);
     if (events && index < events.length) {
       setEvent(events[index]);

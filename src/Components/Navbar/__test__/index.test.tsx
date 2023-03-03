@@ -11,6 +11,6 @@ describe("Navbar", () => {
 
     it('should have a h1 with text React JSX TEMPLATE', () => {
         const { getByText } = render(<Navbar />);
-        expect(getByText('React JSX TEMPLATE')).toBeTruthy();
+        expect(getByText('EVENTIFY')).toBeTruthy();
     })
 });

@@ -8,8 +8,8 @@ describe('Footer', () => {
     const { baseElement } = render(<Footer />);
     expect(baseElement).toBeTruthy();
   });
-  it('should have a span with text Made with ❤️ by Pranav', () => {
+  it('should have a span with text Themes', () => {
     const { getByText } = render(<Footer />);
-    expect(getByText('Made with ❤️ by Pranav')).toBeTruthy();
+    expect(getByText('Themes')).toBeTruthy();
   });
 });

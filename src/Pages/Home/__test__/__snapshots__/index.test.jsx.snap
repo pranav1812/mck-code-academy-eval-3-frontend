@@ -5,9 +5,60 @@ exports[`Home should render successfully 1`] = `
   <div
     class="home"
   >
-    <h1>
-      Home
-    </h1>
+    <div
+      class="home-filter"
+    >
+      <div
+        class="filter"
+      >
+        <select
+          class="filter-select"
+        >
+          <option
+            value="All"
+          >
+            All
+          </option>
+          <option
+            value="Registered"
+          >
+            Registered
+          </option>
+          <option
+            value="Bookmarked"
+          >
+            Bookmarked
+          </option>
+          <option
+            value="SeatsAvailable"
+          >
+            Seats Available
+          </option>
+        </select>
+        <div
+          class="search"
+        >
+          <input
+            class="filter-search"
+            placeholder="Search"
+            type="text"
+            value=""
+          />
+          <button
+            class="filter-search-btn"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="home-cards"
+    >
+      <h1>
+        Loading...
+      </h1>
+    </div>
   </div>
 </DocumentFragment>
 `;

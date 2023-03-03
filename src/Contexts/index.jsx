@@ -42,7 +42,11 @@ const GlobalContextProvider = ({ children }) => {
     console.log('Context Provider useEffect called');
     makeRequest(GET_ALL_EVENTS_METHOD, GET_ALL_EVENTS_URL, {}, {}, navigate)
       .then((res) => {
-        // res.sort((a, b) => a.name < b.name);
+        res.reverse();
+        res.sort((a, b) => {
+          return a.name > b.name ? 1 : -1;
+        });
+        console.log('sorted events', res);
         const events = res.map((event, index) => ({ ...event, index }));
         setEvents(events);
       })
