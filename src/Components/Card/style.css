@@ -1,12 +1,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 408px;
   width: 300px;
-  background-color: #000;
+  background-color: var(--theme-color);
   color: #fff;
   margin: 1vh 2vw;
   border-radius: 16px;
+  font-family: 'Sofia Sans';
 }
 
 .card > img {
@@ -30,7 +31,6 @@
   justify-content: space-between;
   /* height: 400; */
   padding: 1vh 2vw;
-  font-family: 'Sofia Sans';
 }
 
 .card-para-des {
@@ -55,4 +55,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2vw;
+}
+
+.green {
+  color: #a0f3ad;
 }

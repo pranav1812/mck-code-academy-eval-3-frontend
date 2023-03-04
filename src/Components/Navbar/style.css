@@ -1,11 +1,15 @@
 .navbar {
-  background-color: #000;
+  background-color: var(--theme-color);
   height: 80px;
   color: #fff;
   display: flex;
   flex-direction: column;
   padding-left: 100px;
   padding-top: 24px;
+}
+.navbar-inner {
+  width: 850px;
+  align-self: center;
 }
 
 h1 {

@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.css';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ setThemeColor }) => {
   const possibleThemes = ['#000000', '#800080', '#0000FF', '#9B9999'];
   return (
     <footer className="footer">
@@ -11,10 +12,16 @@ const Navbar = () => {
           className="theme-button"
           key={ind}
           style={{ backgroundColor: theme }}
-          onClick={() => {}}
+          onClick={() => {
+            setThemeColor(possibleThemes[ind]);
+          }}
         />
       ))}
     </footer>
   );
+};
+
+Navbar.propTypes = {
+  setThemeColor: PropTypes.func.isRequired,
 };
 export default Navbar;

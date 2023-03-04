@@ -103,18 +103,37 @@ const EventPage = () => {
 
         <div className="event-page-footer">
           <div>
-            <p>
-              {event.isRegistered
-                ? 'REGISTERED'
-                : event.areSeatsAvailable
-                ? 'REGISTER'
-                : 'NO SEATS AVAILABLE'}
-            </p>
+            {event.isRegistered ? (
+              <>
+                <i className="fas fa-check-circle large-icon green" />
+                <span>REGISTERED</span>
+              </>
+            ) : (
+              <></>
+            )}
+            {/* <button onClick={toggleRegisteration}>
+            {event.isRegistered
+              ? 'REGISTERED'
+              : event.areSeatsAvailable
+              ? 'REGISTER'
+              : 'NO SEATS AVAILABLE'}
+          </button> */}
           </div>
           <div>
-            <button onClick={toggleBookmark}>
-              {event.isBookmarked ? 'BOOKMARKED' : 'BOOKMARK'}
-            </button>
+            {event.isBookmarked ? (
+              <i
+                onClick={toggleBookmark}
+                className="fas fa-bookmark large-icon yellow"
+              />
+            ) : (
+              <i
+                onClick={toggleBookmark}
+                className="far fa-bookmark large-icon yellow"
+              />
+            )}
+            {/* <button onClick={toggleBookmark}>
+            {event.isBookmarked ? 'BOOKMARKED' : 'BOOKMARK'}
+          </button> */}
           </div>
         </div>
 
@@ -122,7 +141,7 @@ const EventPage = () => {
           <div>
             <button onClick={toggleRegisteration}>
               {event.isRegistered
-                ? 'REGISTERED'
+                ? 'UNREGISTER'
                 : event.areSeatsAvailable
                 ? 'REGISTER'
                 : 'NO SEATS AVAILABLE'}

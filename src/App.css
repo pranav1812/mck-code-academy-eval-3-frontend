@@ -7,4 +7,13 @@
 .App {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.App > * {
+  flex: none;
+}
+.main {
+  flex: 1;
 }

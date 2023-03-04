@@ -49,9 +49,10 @@ const Filter = () => {
           onChange={handleSearchChange}
           placeholder="Search"
         />
-        <button className="filter-search-btn" onClick={handleSearchSubmit}>
+        <i className="fas fa-search large-icon" onClick={handleSearchSubmit} />
+        {/* <button className="filter-search-btn" onClick={handleSearchSubmit}>
           Search
-        </button>
+        </button> */}
       </div>
     </div>
   );

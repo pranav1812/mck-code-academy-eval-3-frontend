@@ -106,18 +106,37 @@ const Card = ({ index }) => {
 
       <div className="card-footer">
         <div>
-          <button onClick={toggleRegisteration}>
+          {event.isRegistered ? (
+            <>
+              <i className="fas fa-check-circle large-icon green" />
+              <span>REGISTERED</span>
+            </>
+          ) : (
+            <></>
+          )}
+          {/* <button onClick={toggleRegisteration}>
             {event.isRegistered
               ? 'REGISTERED'
               : event.areSeatsAvailable
               ? 'REGISTER'
               : 'NO SEATS AVAILABLE'}
-          </button>
+          </button> */}
         </div>
         <div>
-          <button onClick={toggleBookmark}>
+          {event.isBookmarked ? (
+            <i
+              onClick={toggleBookmark}
+              className="fas fa-bookmark large-icon yellow"
+            />
+          ) : (
+            <i
+              onClick={toggleBookmark}
+              className="far fa-bookmark large-icon yellow"
+            />
+          )}
+          {/* <button onClick={toggleBookmark}>
             {event.isBookmarked ? 'BOOKMARKED' : 'BOOKMARK'}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

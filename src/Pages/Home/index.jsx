@@ -41,19 +41,19 @@ const Home = () => {
   }, [events, filter, search]);
   return (
     <div className="home">
-      <div className="home-filter">
+      <div className="home-inner">
         <Filter />
-      </div>
 
-      <div className="home-cards">
-        {homeEvents.length ? (
-          homeEvents.map((event, index) => {
-            console.log('Hi', index, 'Eve: ', event.index, event);
-            return <Card key={index} event={event} index={event.index} />;
-          })
-        ) : (
-          <h1>Loading...</h1>
-        )}
+        <div className="home-cards">
+          {homeEvents.length ? (
+            homeEvents.map((event, index) => {
+              console.log('Hi', index, 'Eve: ', event.index, event);
+              return <Card key={index} event={event} index={event.index} />;
+            })
+          ) : (
+            <h1>Loading...</h1>
+          )}
+        </div>
       </div>
     </div>
   );

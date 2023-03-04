@@ -7,7 +7,9 @@ const Navbar = () => {
   };
   return (
     <header className="navbar">
-      <h1 onClick={takeToHome}>EVENTIFY</h1>
+      <div className="navbar-inner">
+        <h1 onClick={takeToHome}>EVENTIFY</h1>
+      </div>
     </header>
   );
 };
